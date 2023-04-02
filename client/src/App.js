@@ -53,6 +53,7 @@ function App() {
         <div className="mb-28">
           <form onSubmit={handleSubmit} className='flex w-[80%] absolute inset-x-0 top-6 mx-auto'>
             <input value={input} onChange={(e) => setInput(e.target.value)} type="text" className="bg-transparent border border-[hsla(0,0%,100%,.2)] w-full p-[10px] rounded-md shadow-md shadow-[#202123] focus:outline-none" placeholder="Send a message..." />
+            <button type='submit' className='border rounded-md w-[4.5rem] ml-4 border-[hsla(0,0%,100%,.2)] shadow-md shadow-[#202123] hover:bg-[#2f3133]' >Submit</button>
           </form>
         </div>
         {/* Chatbot results preview */}

@@ -1,14 +1,16 @@
 const express = require('express')
+const dotenv = require('dotenv');
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 const port = 3080
+dotenv.config();
 
 
 const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
     organization: "org-tevADdiGL1FSGDODGtWanucQ",
-    apiKey: "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",
+    apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
