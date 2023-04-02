@@ -31,7 +31,7 @@ function App() {
       body: JSON.stringify({
         message: messages
       })
-    });
+    }).catch((error)=> console.log(error));
     const data = await response.json()
     setChat([...chatNew, { user: "gpt", message: `${data.message}` }])
   }
