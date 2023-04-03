@@ -23,7 +23,7 @@ function App() {
     setInput("");
     setChat(chatNew)
     const messages = chatNew.map((message) => message.message).join("\n");
-    const response = await fetch("https://mern-chatgpt-clone-openai.onrender.com", {
+    const response = await fetch("http://localhost:5000", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -33,6 +33,7 @@ function App() {
       })
     });
     const data = await response.json()
+    // console.log(data);
     setChat([...chatNew, { user: "gpt", message: `${data.message}` }])
   }
 
